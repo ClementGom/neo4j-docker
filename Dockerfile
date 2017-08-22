@@ -26,7 +26,7 @@ RUN curl --fail --silent --show-error --location --remote-name ${NEO4J_URI} \
 
 # Configure neo4j
 RUN sed -i '/^#dbms.connectors.default_listen_address/s/^#//' /var/lib/neo4j/conf/neo4j.conf && \
-    sed -i '/^#.*dbms.connector.bolt.listen_address/s/^#//' /var/lib/neo4j/conf/neo4j.conf
+    sed -i '/^#dbms.connector.bolt.listen_address/s/^#//' /var/lib/neo4j/conf/neo4j.conf
 
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 
